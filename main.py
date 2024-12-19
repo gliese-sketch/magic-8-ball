@@ -1,41 +1,40 @@
-# Yes - definitely
-# It is decidedly so
-# Without a doubt
-# Reply hazy, try again
-# Ask again later
-# Better not tell you now
-# My sources say no
-# Outlook not so good
-# Very doubtful
-
 import random
 
 name = "Bill Gates"
-question = "Will you marry me?"
+question = ""
 answer = ""
     
-random_number = random.randint(1, 15)
+questions_list = [
+    "What is the meaning of life?",
+    "Do you love me?",
+    "Are you a robot?",
+    "How do you feel about robots?",
+    "What is AI?",
+    "Who wrote the book 'The Hitchhiker's Guide to the Galaxy'?",
+    "Who aims to be the first man on the moon?",
+    "Who claims to be the most intelligent person in the world?",
+    "Is Alexander the Great a woman?",
+    "Is the moon made of cheese?",
+]
 
-match random_number:
-    case 1:
-        answer = "Yes - definitely"
-    case 2:
-        answer = "It is decidedly so"
-    case 3:
-        answer = "Without a doubt"
-    case 4:
-        answer = "Reply hazy, try again"
-    case 5:
-        answer = "Ask again later"
-    case 6:
-        answer = "Better not tell you now"
-    case 7:
-        answer = "My sources say no"
-    case 8:
-        answer = "Outlook not so good"
-    case 9:
-        answer = "Very doubtful"
-    case _:
-        answer = "Error"
+answers_list = [
+    "I don't know",
+    "Yes",
+    "Pretty sure",
+    "No nada",
+    "Go and ask Sam Harris",
+]
 
-print(f"{name}: {question}\n{answer}")
+
+question_index = random.randint(0, len(questions_list) - 1)
+answer_index = random.randint(0, len(answers_list) - 1)
+
+question = questions_list[question_index]
+answer = answers_list[answer_index]
+
+if name:
+    print(f"{name} asks: {question}")
+else:
+    print(f"Question: {question}")
+
+print(f"Answer: {answer}")
